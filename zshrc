@@ -18,7 +18,7 @@ done
 
 #load theme
 export THEME=powerlevel10k
-source $ZSH/themes/$THEME.zsh-theme
+source $ZSH/themes/$THEME/$THEME.zsh-theme
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
