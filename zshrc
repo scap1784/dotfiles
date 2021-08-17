@@ -1,8 +1,18 @@
+# Allow local customization in the ~/.shell_local_before file
+if [ -f ~/.shell_local_before ]; then
+    source ~/.shell_local_before
+fi
+
+# Allow local customizations in the ~/.zsh_local_before file
+if [ -f ~/.zsh_local_before ]; then
+    source ~/.zsh_local_before
+fi
+
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+    source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
 set -o magicequalsubst
@@ -30,3 +40,13 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#ff00ff,bg=cyan,bold,underline"
 
 # Syntax Highlighting
 source $ZSH/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# Allow local customization in the ~/.shell_local_after file
+if [ -f ~/.shell_local_after ]; then
+    source ~/.shell_local_after
+fi
+
+# Allow local customizations in the ~/.zsh_local_after file
+if [ -f ~/.zsh_local_after ]; then
+    source ~/.zsh_local_after
+fi
