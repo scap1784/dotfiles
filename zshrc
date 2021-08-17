@@ -22,3 +22,11 @@ source $ZSH/themes/$THEME/$THEME.zsh-theme
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# Auto suggestions
+source $ZSH/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#ff00ff,bg=cyan,bold,underline"
+
+# Syntax Highlighting
+source $ZSH/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
