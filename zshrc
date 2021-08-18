@@ -18,18 +18,23 @@ fi
 set -o magicequalsubst
 export ZSH=~/.zsh
 
-# History See: 
+# History See: https://www.soberkoder.com/better-zsh-history/
 export HISTFILE=~/.zsh_history
+export SAVEHIST=1000000000
 export HISTFILESIZE=1000000000
 export HISTSIZE=1000000000
 setopt INC_APPEND_HISTORY # add commands to history immediately.
 export HISTTIMEFORMAT="[%F %T] "
-setop EXTENDED_HISTORY # Records timestamp.
+setopt EXTENDED_HISTORY # Records timestamp.
+setopt share_history
+setopt hist_verify
+
+alias history="history -E"
 
 # load plugins
 # Most oh my zsh plugins are simple scripts we can just source. 
 # Checkout: https://github.com/ohmyzsh/wiki/Plugins
-for f in $ZSH/plugins; do 
+for f in $ZSH/plugins/*(.); do 
     source $f
 done
 
