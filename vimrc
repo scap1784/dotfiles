@@ -55,7 +55,7 @@ set laststatus=2
 set backspace=indent,eol,start " allow backspacing over everything
 set timeout timeoutlen=1000 ttimeoutlen=100 " fix slow O inserts
 set lazyredraw " skip redrawing screen in some cases
-set autochdir " automatically set current directory to directory of last opened file
+"set autochdir " automatically set current directory to directory of last opened file
 set hidden " allow auto-hiding of edited buffers
 set history=8192 " more history
 set nojoinspaces " suppress inserting two spaces between sentences
@@ -72,7 +72,7 @@ set wildmode=longest,list
 set wildmenu
 set mouse+=a " enable mouse mode (scrolling, selection, etc)
 if &term =~ '^screen'
-    " tmux knows the extended mouse mode
+   " tmux knows the extended mouse mode
     set ttymouse=xterm2
 endif
 set nofoldenable " disable folding by default
@@ -80,9 +80,6 @@ set nofoldenable " disable folding by default
 "--------------------
 " Misc configurations
 "--------------------
-
-" shared clipboard
-set clipboard=unnamed
 
 " disable audible bell
 set noerrorbells visualbell t_vb=
@@ -93,6 +90,14 @@ set splitright
 
 " toggle relative numbering
 nnoremap <C-n> :set rnu!<CR>
+
+" make copy paste not suck.
+vnoremap <C-c> "*y
+nnoremap <C-v> "*p
+inoremap <C-v> "*p
+" shared clipboard
+set clipboard=unnamedplus
+
 
 " save read-only files
 command -nargs=0 Sudow w !sudo tee % >/dev/null
