@@ -17,6 +17,8 @@
       relink: true
     ~/.zsh: 
       path: zsh
+    ~/.bashrc:
+      path: bashrc
     ~/.p10k.zsh:
       path: p10k.zsh
 
