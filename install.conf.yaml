@@ -21,6 +21,7 @@
       path: bashrc
     ~/.p10k.zsh:
       path: p10k.zsh
+      relink: true
 
 - create:
   - ~/downloads
