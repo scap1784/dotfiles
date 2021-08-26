@@ -24,7 +24,7 @@
       relink: true
 
 - create:
-  - ~/downloads
+  - ~/Downloads
   - ~/.vim/undo-history
 
 - shell:
