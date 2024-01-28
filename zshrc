@@ -68,3 +68,12 @@ fi
 if [ -f ~/.zsh_local_after ]; then
     source ~/.zsh_local_after
 fi
+
+# Check for mac if so include homebrew stuff
+export UNAME_S=$(uname -s)
+if [ "${UNAME_S}" = "Darwin" ]; then
+    export LDFLAGS="-L/opt/homebrew/lib"
+    export CPPFLAGS="-I/opt/homebrew/include"
+fi
+
+#export PATH=PATH;~/.cargo/bin
